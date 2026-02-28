@@ -1,0 +1,1332 @@
+/* --- Global Reset: Hi step khup mhatvachi ahe --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Side space yeu naye mhanun */
+}
+
+/* --- Topbar Styling --- */
+.topbar {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 2px solid #1e293b;
+
+    /* Varati jaga nko mhanun 0 settings */
+    margin-top: 0 !important;
+    position: relative;
+    top: 0;
+
+    /* Full Width */
+    width: 100%;
+    z-index: 1001;
+}
+
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    /* Content center madhe rahava mhanun */
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Left Section */
+.topbar-left {
+    display: flex;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.topbar-left a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+}
+
+.topbar-left a i {
+    color: #38bdf8;
+}
+
+/* Middle Section: Auto-Scrolling Ticker */
+.topbar-center {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.ticker-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    padding-left: 50%;
+    /* Start smooth */
+}
+
+.ticker-item {
+    display: inline-block;
+    padding-right: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #38bdf8;
+    /* Ticker highlight color */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Right Section */
+.topbar-right {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* --- Colorful Social Icons --- */
+.social-icon {
+    color: #ffffff;
+    font-size: 14px;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+/* Facebook Hover */
+.social-icon.facebook:hover {
+    background: #1877F2;
+    box-shadow: 0 0 15px #1877F2;
+    transform: translateY(-5px) rotate(360deg);
+}
+
+/* LinkedIn Hover */
+.social-icon.linkedin:hover {
+    background: #0077B5;
+    box-shadow: 0 0 15px #0077B5;
+    transform: translateY(-5px) rotate(360deg);
+}
+
+/* Instagram Hover (Gradient) */
+.social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 0 15px #d6249f;
+    transform: translateY(-5px) rotate(360deg);
+}
+
+/* Twitter/X Hover */
+.social-icon.twitter:hover {
+    background: #1DA1F2;
+    box-shadow: 0 0 15px #1DA1F2;
+    transform: translateY(-5px) rotate(360deg);
+}
+
+/* Desktop Icon Spacing */
+.topbar-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Responsive Desktop & Tablet (1024px) --- */
+@media (max-width: 1024px) {
+    .topbar-container {
+        gap: 10px;
+    }
+
+    .ticker-item {
+        font-size: 11px;
+    }
+}
+
+/* --- Responsive Mobile (768px and below) --- */
+@media (max-width: 768px) {
+    .topbar {
+        padding: 10px 15px;
+    }
+
+    .topbar-container {
+        flex-direction: column;
+        /* Mobile var ekamekaankhali stack hoil */
+        gap: 12px;
+        text-align: center;
+    }
+
+    .topbar-left {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .topbar-left a {
+        font-size: 12px;
+    }
+
+    .topbar-center {
+        width: 100%;
+        margin: 0;
+        background: rgba(56, 189, 248, 0.1);
+        /* Subtle color for mobile ticker */
+    }
+
+    .topbar-right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Tiny Mobile Phones */
+@media (max-width: 480px) {
+    .topbar-left {
+        flex-direction: column;
+        /* Mobile var email ani phone ekamekaankhali */
+        gap: 5px;
+    }
+}
+
+/* --- Desktop & Large Screens (Default) --- */
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    /* Desktop var ekach line madhe */
+}
+
+/* --- Tablets & Small Laptops (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .topbar {
+        padding: 8px 3%;
+    }
+
+    .topbar-left {
+        gap: 12px;
+    }
+
+    .topbar-left a {
+        font-size: 12px;
+    }
+
+    .ticker-item {
+        font-size: 11px;
+    }
+}
+
+/* --- Mobile Landscape & Large Phones (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .topbar-container {
+        flex-direction: column;
+        /* Stack elements vertically */
+        gap: 10px;
+    }
+
+    .topbar-left {
+        order: 1;
+        /* Contact info varti */
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* Jar screen khup lahan asli tar icons khali yetil */
+    }
+
+    .topbar-center {
+        order: 2;
+        /* Ticker madhe */
+        width: 100%;
+        margin: 5px 0;
+        border-radius: 10px;
+        /* Mobile var thoda square look */
+    }
+
+    .topbar-right {
+        order: 3;
+        /* Social icons khali */
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* --- Small Mobile Phones (max-width: 480px) --- */
+@media (max-width: 480px) {
+    .topbar {
+        padding: 10px 5px;
+    }
+
+    .topbar-left {
+        flex-direction: column;
+        /* Phone ani Email ekamekaankhali */
+        gap: 6px;
+    }
+
+    .topbar-left a {
+        font-size: 11px;
+        justify-content: center;
+    }
+
+    /* Mobile var ticker cha speed thoda kami kela jene-karun vachayla sope hoil */
+    .ticker-content {
+        animation-duration: 15s;
+    }
+
+    .ticker-item {
+        font-size: 10px;
+        padding-right: 60px;
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+/* --- Extra Small Phones (max-width: 320px) --- */
+@media (max-width: 320px) {
+    .topbar-left a span {
+        font-size: 10px;
+        /* Khupach lahan screen sathi text size azun kami */
+    }
+}
+
+/* =========================
+start navbar
+========================= */
+
+/* --- Navbar Variables --- */
+:root {
+    --nav-bg: rgba(255, 255, 255, 0.98);                
+    --primary-blue: #007bff;                
+    --secondary-blue: #00d4ff;                
+    --text-dark: #1e293b;                
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {                
+    margin: 0;                
+    padding: 0;                
+    box-sizing: border-box;                
+}
+
+.main-navbar {                
+    background: var(--nav-bg);                
+    backdrop-filter: blur(10px);                
+    padding: 10px 0;                
+    position: sticky;                
+    top: 0;                
+    z-index: 1000;                
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);                
+}
+
+.nav-container {                
+    display: flex;                
+    justify-content: space-between;                
+    align-items: center;                
+    width: 92%;                
+    max-width: 1400px;                
+    margin: 0 auto;                
+    height: 61px;                
+}
+
+/* --- Circle Logo Styling --- */
+.logo-circle {                
+    width: 70px;                
+    height: 70px;                
+    border-radius: 50%;                
+    border: 3px solid var(--primary-blue);                
+    overflow: hidden;                
+    background: #fff;                
+    display: flex;                
+    justify-content: center;                
+    align-items: center;                
+    transition: var(--transition);                
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);                
+}
+
+.logo-circle img {                
+    width: 100%;                
+    height: 140%;                
+    object-fit: cover;                
+    transform: scale(1.1);                
+    transition: var(--transition);                
+}
+
+.logo-wrapper:hover .logo-circle {                
+    transform: rotate(360deg);                
+    border-color: var(--secondary-blue);                
+}
+
+/* --- Nav Links (Desktop) --- */
+.nav-menu {                
+    display: flex;                
+    align-items: center;                
+    list-style: none;                
+    gap: 10px;                
+}
+
+.nav-link {                
+    text-decoration: none;                
+    color: var(--text-dark);                
+    font-weight: 600;                
+    font-size: 15px;                
+    padding: 10px 15px;                
+    position: relative;                
+    transition: var(--transition);                
+    font-family: sans-serif;                
+}
+
+.nav-link::after {                
+    content: '';                
+    position: absolute;                
+    bottom: 0;                
+    left: 50%;                
+    width: 0;                
+    height: 2px;                
+    background: var(--primary-blue);                
+    transition: var(--transition);                
+    transform: translateX(-50%);                
+}
+
+.nav-link:hover::after {                
+    width: 70%;                
+}
+
+.nav-link:hover {                
+    color: var(--primary-blue);                
+}
+
+/* --- Get Quote Button --- */
+.btn-quote {                
+    background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));                
+    color: #fff !important;                
+    padding: 12px 25px;                
+    border-radius: 50px;                
+    text-decoration: none;                
+    font-weight: 700;                
+    margin-left: 15px;                
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);                
+    transition: var(--transition);                
+    display: inline-block;                
+    font-family: sans-serif;                
+}
+
+.btn-quote:hover {                
+    transform: translateY(-3px);                
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);                
+}
+
+/* --- Hamburger Mobile Menu --- */
+.hamburger {                
+    display: none;                
+    cursor: pointer;                
+    z-index: 1002 !important; /* Clickable असण्यासाठी Z-index */                
+    background: none;                
+    border: none;                
+    position: relative;                
+}
+
+.bar {                
+    display: block;                
+    width: 28px;                
+    height: 3px;                
+    margin: 5px 0;                
+    background: var(--text-dark);                
+    transition: var(--transition);                
+    border-radius: 3px;                
+}
+
+/* --- Mobile Responsive (Max-width: 1024px) --- */
+/* --- Mobile Responsive (Max-width: 1024px) --- */
+@media (max-width: 1024px) {                
+    .hamburger {                
+        display: block;                
+    }                
+
+    /* Hamburger Animation to X */
+    .hamburger.active .bar:nth-child(2) {                
+        opacity: 0;                
+    }                
+
+    .hamburger.active .bar:nth-child(1) {                
+        transform: translateY(8px) rotate(45deg);                
+    }                
+
+    .hamburger.active .bar:nth-child(3) {                
+        transform: translateY(-8px) rotate(-45deg);                
+    }                
+
+    /* --- Mobile Menu Container (Animation) --- */
+    .nav-menu {                
+        position: fixed;                
+        top: -100vh; /* सुरुवातीला स्क्रीनच्या वर लपवा */                
+        left: 0;                
+        width: 100%;                
+        height: 100vh; /* पूर्ण स्क्रीन उंची */                
+        background: #fff;                
+        flex-direction: column;                
+        justify-content: center;                
+        align-items: center;                
+        
+        /* Smooth Sliding Animation */                
+        transition: top 0.5s ease-in-out !important;                
+        z-index: 1001 !important; /* लोगो आणि बँनरच्या वर */                
+        padding-top: 60px;                
+    }                
+
+    /* --- सुधारित Active state --- */
+    .nav-menu.active {                
+        /* या आधी top: 0 !important; होते, ते बदलून खालीलप्रमाणे करा */
+        top: -70px !important; /* लिंक्स आणि बटण वर सरकवण्यासाठी हे व्हॅल्यू अ‍ॅडजस्ट करा (उदा. -30px, -50px) */
+    }                
+
+    .nav-item {                
+        margin: 5px 0; /* लिंक्समधील अंतर कमी केले */                
+    }                
+
+    .nav-link {                
+        font-size: 22px; /* मोबाईलसाठी फॉन्ट साईझ */                
+        display: block;                
+        padding: 10px;                
+        color: var(--text-dark);                
+    }                
+
+    .btn-quote {                
+        margin: 20px 0 0 0;                
+        font-size: 18px;                
+        display: block; /* बटण लिंक्सच्या खाली दिसेल */
+    }                
+}
+
+/* =========================
+end navbar
+========================= */
+
+
+/* ======================
+start portfolio
+====================== */
+
+:root {
+    --bg-color: #050a0f;
+    --primary-neon: #00d2ff; /* निळा */
+    --secondary-neon: #9d50bb; /* जांभळा */
+    --text-light: #ffffff;
+    --text-dark: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.portfolio-section {
+    padding: 100px 5%;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.portfolio-container {
+    max-width: 1400px; /* रुंद स्क्रीनसाठी कंटेनर मोठा केला */
+    margin: 0 auto;
+}
+
+.portfolio-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.p-subtitle {
+    color: var(--primary-neon);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.p-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.p-title span {
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Filters */
+.filter-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-neon), var(--secondary-neon));
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
+    border-color: transparent;
+    transform: translateY(-3px);
+}
+
+/* Project Grid - Isometric Container */
+.project-grid {
+    display: grid;
+    /* 4 cards in a single row on desktop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    perspective: 1500px;
+}
+
+/* Card - Isometric 3D Effect */
+.project-card {
+    height: 320px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.5s ease, scale 0.5s ease;
+    opacity: 1;
+    scale: 1;
+}
+
+/* Hidden state for filter animation */
+.project-card.hidden {
+    opacity: 0;
+    scale: 0.8;
+    pointer-events: none;
+    transform: rotateX(10deg);
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-back {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(5,10,15,0.9), rgba(157,80,187,0.4));
+}
+
+.card-back h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--primary-neon);
+}
+
+.card-back p {
+    font-size: 0.9rem;
+    color: #eee;
+}
+
+/* --- Responsive Settings --- */
+
+/* Laptops / Smaller Desktops */
+@media (max-width: 1200px) {
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+    .p-title { font-size: 3rem; }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+    .p-title { font-size: 2.5rem; }
+}
+
+/* Mobile Phones */
+@media (max-width: 576px) {
+    .portfolio-section { padding: 50px 5%; }
+    .project-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+    .p-title { font-size: 2rem; }
+    .filter-btn { padding: 10px 20px; font-size: 0.9rem; }
+    .project-card { height: 280px; }
+}
+
+/* ======================
+end portfolio
+====================== */
+
+/* =========================
+Tech Stack & Tools
+========================= */
+
+.tech-stack-section {
+    padding: 100px 20px;
+    background-color: #0a0e17;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 70px;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.tech-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+    perspective: 1000px; /* 3D context */
+}
+
+.orbit-group {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.center-icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+    border: 2px solid #00ffff;
+    z-index: 2;
+}
+
+.tech-icon {
+    position: absolute;
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    transform-style: preserve-3d;
+}
+
+/* Positioning icons around center */
+.orbit-group .tech-icon:nth-child(1) { transform: rotate(0deg) translate(120px) rotate(0deg); }
+.orbit-group .tech-icon:nth-child(2) { transform: rotate(72deg) translate(120px) rotate(-72deg); }
+.orbit-group .tech-icon:nth-child(3) { transform: rotate(144deg) translate(120px) rotate(-144deg); }
+.orbit-group .tech-icon:nth-child(4) { transform: rotate(216deg) translate(120px) rotate(-216deg); }
+.orbit-group .tech-icon:nth-child(5) { transform: rotate(288deg) translate(120px) rotate(-288deg); }
+
+/* 3D Hover Effect */
+.tech-icon:hover {
+    transform: translateZ(50px) scale(1.3) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .tech-container { gap: 50px; }
+    .orbit-group { width: 200px; height: 200px; }
+    .tech-icon { font-size: 24px; padding: 10px; }
+}
+
+/* =========================
+Tech Stack & Tools
+========================= */
+
+/* =============================
+Measurable Impact & Solutions
+=============================  */
+
+.key-results-section {
+    padding: 100px 20px;
+    background-color: #05070a;
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    perspective: 1500px; /* 3D context */
+}
+
+.section-title {
+    font-size: 36px;
+    margin-bottom: 70px;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* 3D Flipping Cards */
+.results-3d-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto 70px;
+}
+
+.result-card-3d {
+    background-color: transparent;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border-radius: 15px;
+}
+
+.result-card-3d:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-front {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.card-back {
+    background: rgba(0, 255, 255, 0.05);
+    transform: rotateY(180deg);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.result-icon { font-size: 40px; margin-bottom: 10px; }
+.counter { font-size: 50px; color: #00ffff; display: inline; }
+.suffix { font-size: 30px; color: #00ffff; }
+
+/* 3D Accordion */
+.subtitle { margin-bottom: 30px; color: #fff; font-size: 24px; }
+.accordion-3d { max-width: 800px; margin: 0 auto; text-align: left; }
+
+.accordion-item-3d {
+    background: rgba(255, 255, 255, 0.02);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+}
+
+.accordion-header-3d {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s;
+}
+
+.accordion-header-3d:hover { color: #00ffff; }
+
+.accordion-content-3d {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    color: #ccc;
+    line-height: 1.7;
+    transform: translateZ(20px); /* Makes content pop out */
+}
+
+/* When accordion is active */
+.accordion-item-3d.active {
+    transform: rotateX(5deg);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.3);
+}
+
+
+/* =============================
+Measurable Impact & Solutions
+=============================  */
+
+/* =========================
+start Our Projects
+========================= */
+
+
+/* Projects Section Styling */
+.projects-section {
+    padding: 60px 20px;
+    background-color: #0a0e17; /* Dark Background */
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    perspective: 1000px; /* Essential for 3D effect */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    transform-style: preserve-3d; /* Key for 3D */
+    position: relative;
+    cursor: pointer;
+}
+
+/* 3D Hover Effect on Card */
+.project-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Icon 3D movement */
+.project-card:hover .icon {
+    transform: translateZ(50px); /* Makes icon pop out */
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #fff;
+    transform: translateZ(30px); /* Makes title pop out */
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+    transform: translateZ(20px); /* Makes text pop out */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .section-title { font-size: 28px; }
+}
+
+
+/* =========================
+end Our Projects
+========================= */
+
+
+/* =========================
+start footer
+========================= */
+
+/* --- Footer Styling --- */
+.footer-section {
+    background: #0f172a;
+    /* Deep Navy Theme */
+    color: #e2e8f0;
+    padding: 80px 0 20px;
+    font-family: 'Poppins', sans-serif;
+    border-top: 4px solid #38bdf8;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 Columns Desktop */
+    gap: 40px;
+}
+
+/* --- Logo Circle --- */
+.footer-logo-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #38bdf8;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 25px;
+    transition: transform 0.5s ease;
+}
+
+.footer-logo-circle img {
+    /* Image poorn dabba cover karel */
+    width: 100%;
+    height: 100%;
+
+    /* Image stretch hou naye mhanun he khup mhatvache ahe */
+    object-fit: cover;
+
+    /* Image thodi 'Zoom' karun mothi dakhvanyasathi ha best pariway ahe */
+    transform: scale(1.1);
+
+    /* Image center la alignment sathi */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Hover kelyavar image thodi zoom-out kiva rotate karu shakta */
+.footer-logo-circle:hover img {
+    transform: scale(1.2);
+    /* Hover var azun thodi mothi hoil */
+}
+
+.footer-logo-circle:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.company-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+/* --- Social Icons --- */
+.social-box {
+    display: flex;
+    gap: 12px;
+}
+
+.s-icon {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s ease;
+}
+
+.s-icon:hover {
+    background: #38bdf8;
+    color: #0f172a;
+    transform: translateY(-5px);
+}
+
+/* --- Column Titles --- */
+.column-title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.column-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #38bdf8;
+}
+
+/* --- List Links --- */
+.footer-links-list {
+    list-style: none;
+}
+
+.footer-links-list li {
+    margin-bottom: 12px;
+}
+
+.footer-links-list li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links-list li a:hover {
+    color: #38bdf8;
+    padding-left: 8px;
+}
+
+/* --- Newsletter Form --- */
+.input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    flex: 1;
+    outline: none;
+}
+
+.send-btn {
+    background: #38bdf8;
+    border: none;
+    color: #0f172a;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #fff;
+}
+
+/* --- Bottom Copyright --- */
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* --- Responsive (Mobile Friendly) --- */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo-circle,
+    .social-box,
+    .column-title::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-links-list li a {
+        justify-content: center;
+    }
+}
+
+/* Contact Column Styling */
+.contact-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Title chya khali blue line sathi */
+.column-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background: #38bdf8;
+    /* Blue accent color */
+    border-radius: 2px;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Pratyek line madhe space */
+}
+
+.contact-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #94a3b8;
+    /* Subtle gray-white color */
+    display: flex;
+    align-items: center;
+    /* Icon ani text ekach line madhe */
+    gap: 12px;
+    /* Icon ani text madhle antar */
+    transition: all 0.3s ease;
+}
+
+/* Icons chi styling */
+.contact-box p i {
+    width: 32px;
+    height: 32px;
+    background: rgba(56, 189, 248, 0.1);
+    /* Light blue background */
+    color: #38bdf8;
+    /* Icon color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* Circle icons */
+    font-size: 14px;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    /* Icon dabla jau naye mhanun */
+}
+
+/* Hover Effect: Mouse nelyavar icon chamkel ani text white hoil */
+.contact-box p:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+    /* Thoda ujjvi kade sarakne */
+}
+
+.contact-box p:hover i {
+    background: #38bdf8;
+    color: #0f172a;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+/* Mobile Responsive Alignment */
+@media (max-width: 600px) {
+    .contact-column {
+        align-items: center;
+        /* Mobile var center align */
+        text-align: center;
+    }
+
+    .column-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        /* Line center la nenyasathi */
+    }
+
+    .contact-box p {
+        justify-content: center;
+    }
+}
+
+/* =========================
+end footer
+========================= */
