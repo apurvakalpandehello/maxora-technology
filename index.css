@@ -909,7 +909,8 @@ Start services
 ======================== */
 
 .services-section {
-    padding: 100px 0;
+    /* Decreased top padding from 100px to 20px */
+    padding: 70px 0 30px 0; 
     background: #0f172a;
     /* Deep Navy Background */
     color: #fff;
@@ -922,8 +923,10 @@ Start services
     margin: 0 auto;
 }
 
+/* If the header inside has a large top margin, you can also add this: */
 .services-header {
     text-align: center;
+    margin-top: 0; /* Ensures no extra margin at the top of the header */
     margin-bottom: 60px;
 }
 
@@ -1058,12 +1061,21 @@ start how we work
 
 .maxora-hologram-section {
     background-color: var(--bg-deep);
-    padding: 100px 0;
+    /* Decreased top padding from 100px to 20px */
+    padding: 40px 0 100px 0; 
     font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
     position: relative;
     overflow: hidden;
+}
+
+.title {
+    font-size: 42px;
+    /* Decreased margin-top from 30px to 10px */
+    margin-top: 10px; 
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* Background Wave Animation */
@@ -1097,12 +1109,6 @@ start how we work
     box-shadow: 0 0 20px rgba(86, 188, 194, 0.4);
 }
 
-.title {
-    font-size: 42px;
-    margin-top: 30px;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
 
 .title span {
     color: var(--maxora-blue);
@@ -1183,14 +1189,6 @@ start how we work
 .hologram-card:hover .crystal-inner {
     background: rgba(86, 188, 194, 0.3);
     transform: scale(1.05);
-}
-
-.footer-check {
-    margin-top: 20px;
-    color: var(--maxora-teal);
-    font-size: 24px;
-    filter: drop-shadow(0 0 8px var(--maxora-teal));
-    opacity: 0.8;
 }
 
 /* KEYFRAMES FOR ANIMATION */
@@ -1340,51 +1338,90 @@ start working process
     }
 }
 
+
+/* ========================
+start working process
+======================== */
+
+:root {
+    --brand-teal: #56BCC2;
+    --brand-blue: #0083C9;
+    --dark-bg: #0b0f17;
+}
+
+body { margin: 0; padding: 0; }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
 .process-flow-section {
     background-color: var(--dark-bg);
-    padding: 100px 0;
+    /* Decreased top padding from 100px to 20px */
+    padding: 20px 0 100px 0; 
     color: white;
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
 
-.flow-title {
+/* Also remove the default margin from the first element if a gap remains */
+.process-header {
     text-align: center;
-    font-weight: 400;
+    margin-top: 0; /* Ensures the header sits right at the top */
     margin-bottom: 80px;
 }
 
-.flow-title span {
-    color: var(--brand-blue);
+.badge {
+    background: linear-gradient(90deg, var(--brand-teal), var(--brand-blue));
+    padding: 8px 25px;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 20px;
 }
+
+.title { font-size: 42px; font-weight: 600; color: #fff; }
+.title span { color: var(--brand-blue); }
+.process-subtitle { color: #a0a0a0; max-width: 600px; margin: 20px auto 0; }
 
 .flow-wrapper {
     position: relative;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 20px 0;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
 }
 
-/* Connection Line */
+/* Darker Connection Line */
 .flow-line {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 0; /* Behind the Orbs */
+    pointer-events: none;
 }
 
 .steps-grid {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     position: relative;
     z-index: 1;
 }
 
-/* The Orb Card */
+/* Orb Size: 220px */
 .orb-container {
-    width: 280px;
-    height: 280px;
+    width: 220px;
+    height: 220px;
     position: relative;
     transition: 0.5s ease;
 }
@@ -1393,6 +1430,7 @@ start working process
     width: 100%;
     height: 100%;
     background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1), transparent);
+    background-color: var(--dark-bg); /* Prevents the line from showing through the center */
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -1401,7 +1439,7 @@ start working process
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     position: relative;
     z-index: 2;
 }
@@ -1409,16 +1447,15 @@ start working process
 .step-badge {
     position: absolute;
     top: 10px;
-    left: 10px;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    left: -4px;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 20px;
 }
 
 .orb-glow {
@@ -1428,68 +1465,33 @@ start working process
     top: 0;
     left: 0;
     background: var(--brand-blue);
-    filter: blur(50px);
+    filter: blur(40px);
     opacity: 0.15;
     z-index: 1;
-    transition: 0.5s;
 }
 
-/* Icons & Typography */
-.icon-box {
-    font-size: 40px;
-    color: white;
-    margin-bottom: 15px;
-}
-
-.orb-inner h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-.orb-inner p {
-    font-size: 12px;
-    color: #ccc;
-    line-height: 1.4;
-}
+.icon-box { font-size: 32px; margin-bottom: 10px; color: var(--brand-teal); }
+.orb-inner h3 { font-size: 15px; margin-bottom: 8px; color: #fff; }
+.orb-inner p { font-size: 11px; color: #ccc; line-height: 1.4; }
 
 .orb-btn {
-    margin-top: 15px;
+    margin-top: 10px;
     background: linear-gradient(90deg, var(--brand-teal), var(--brand-blue));
     border: none;
-    padding: 5px 20px;
+    padding: 5px 15px;
     color: white;
     border-radius: 5px;
-    font-size: 12px;
-    cursor: pointer;
+    font-size: 10px;
     font-weight: 600;
+    cursor: pointer;
 }
 
-/* Hover Effect */
-.orb-container:hover {
-    transform: translateY(-10px);
-}
+.orb-container:hover { transform: translateY(-10px); }
+.orb-container:hover .orb-inner { border-color: var(--brand-teal); }
 
-.orb-container:hover .orb-glow {
-    opacity: 0.5;
-    filter: blur(30px);
-}
-
-.orb-container:hover .orb-inner {
-    border-color: var(--brand-teal);
-}
-
-/* Responsive */
 @media (max-width: 992px) {
-    .steps-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-    }
-
-    .flow-line {
-        display: none;
-    }
+    .steps-grid { flex-direction: column; align-items: center; gap: 50px; }
+    .flow-line { display: none; }
 }
 
 /* ========================
@@ -1502,8 +1504,8 @@ start Technologies Used
 
 .tech-stack-section {
     background-color: #050a14;
-    /* Deep dark background */
-    padding: 100px 0;
+    /* CHANGED: Decreased from 100px to 40px to reduce space above the badge/title */
+    padding: 40px 0 100px 0; 
     font-family: 'Poppins', sans-serif;
     color: white;
     text-align: center;
@@ -1637,12 +1639,14 @@ start achievement
 
 .premium-impact-section {
     position: relative;
-    padding: 100px 0;
+    /* Decreased top padding from 100px to 20px */
+    padding: 20px 0 100px 0; 
     background-color: var(--deep-bg);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    min-height: 90vh;
+    /* Changed from 90vh to auto to remove forced empty space */
+    min-height: auto; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1827,7 +1831,8 @@ start testimonial
 
 .testimonial-section {
     background: var(--bg-dark);
-    padding: 80px 20px;
+    /* Decreased top padding from 80px to 20px */
+    padding: 20px 20px 80px; 
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
@@ -1835,7 +1840,10 @@ start testimonial
 .title {
     color: white;
     font-size: 2.5rem;
-    margin-bottom: 50px;
+    /* Ensure no browser default margin is pushing it down */
+    margin-top: 0; 
+    /* Decreased bottom margin from 50px to 25px to pull cards closer */
+    margin-bottom: 25px; 
     text-transform: uppercase;
     letter-spacing: 2px;
 }

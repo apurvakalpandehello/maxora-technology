@@ -804,8 +804,9 @@ comapny overview
 
 .about-section-new {
     background: var(--dark-bg);
-    padding: 120px 20px;
-    overflow: hidden; /* Ensure animations don't cause scrollbars */
+    /* Reduced top padding from 120px to 40px */
+    padding: 40px 20px 120px; 
+    overflow: hidden; 
     font-family: sans-serif;
 }
 
@@ -987,14 +988,18 @@ start core expertise
 
 .expertise-section {
     background: var(--dark);
-    padding: 100px 5%;
+    /* Reduced top padding from 100px to 30px */
+    /* Syntax: padding: [top] [left/right] [bottom] */
+    padding: 30px 5% 100px; 
     text-align: center;
     font-family: sans-serif;
 }
 
+/* Ensure the title doesn't have extra top margin */
 .expertise-title {
     font-size: 3rem;
     color: white;
+    margin-top: 0; 
     margin-bottom: 60px;
     text-transform: uppercase;
 }
@@ -1101,8 +1106,12 @@ start vision mission
 
 .mv-section {
     background: var(--dark);
-    padding: 120px 5%;
+    /* Reduced top padding from 120px to 40px */
+    padding: 40px 5% 120px; 
     display: flex;
+    /* Added flex-direction to ensure header and container stack correctly */
+    flex-direction: column; 
+    align-items: center; 
     justify-content: center;
     overflow: hidden;
     font-family: sans-serif;
@@ -1215,7 +1224,10 @@ start vision mission
 /* --- Mission & Vision Heading Styling --- */
 .mv-header {
     text-align: center;
-    margin-bottom: 60px; /* Cards ani heading madhli gap */
+    /* Reduced bottom margin to pull cards closer to the heading */
+    margin-bottom: 40px; 
+    /* Ensure no browser default margin-top is adding extra space */
+    margin-top: 0; 
     width: 100%;
 }
 
@@ -1293,14 +1305,18 @@ start static
 
 .stats-tech-cta-section {
     background: var(--dark);
-    padding: 100px 0;
+    /* CHANGED: Reduced top padding from 100px to 20px */
+    padding: 20px 0 100px 0; 
     width: 100%;
     position: relative;
-    overflow: hidden; /* For Neural Network to stay in bounds */
+    overflow: hidden; 
     display: flex;
+    /* Added flex-direction to ensure the header stays at the top */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Minimum height for good visual */
+    /* OPTIONAL: Reduced from 80vh to 60vh if you want the section overall shorter */
+    min-height: 60vh; 
     font-family: sans-serif;
 }
 
@@ -1325,7 +1341,8 @@ start static
 /* --- Stats Header --- */
 .stats-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-top: 0; 
+    margin-bottom: 40px; /* Reduced gap between title and stats cards */
     color: white;
 }
 

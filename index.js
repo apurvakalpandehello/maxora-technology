@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, index * 200);
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
     steps.forEach(step => {
         step.style.opacity = "0";
