@@ -553,7 +553,7 @@ start portfolio
 }
 
 .portfolio-section {
-    padding: 100px 5%;
+    padding: 40px 20px 20px 20px; 
     background-color: var(--bg-color);
     color: var(--text-light);
     font-family: 'Poppins', sans-serif;
@@ -736,7 +736,7 @@ Tech Stack & Tools
 ========================= */
 
 .tech-stack-section {
-    padding: 100px 20px;
+    padding: 20px 20px 20px 20px;
     background-color: #0a0e17;
     color: white;
     text-align: center;
@@ -822,7 +822,7 @@ Measurable Impact & Solutions
 =============================  */
 
 .key-results-section {
-    padding: 100px 20px;
+    padding: 80px 20px 20px 20px;
     background-color: #05070a;
     color: white;
     text-align: center;
@@ -860,7 +860,9 @@ Measurable Impact & Solutions
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    /* Soft, layered shadow for a modern look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 
+                0 1px 4px rgba(255, 255, 255, 0.05); 
     border-radius: 15px;
 }
 
@@ -878,7 +880,9 @@ Measurable Impact & Solutions
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Faint border and a subtle inner shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.02);
 }
 
 .card-front {
@@ -896,14 +900,15 @@ Measurable Impact & Solutions
 .suffix { font-size: 30px; color: #00ffff; }
 
 /* 3D Accordion */
-.subtitle { margin-bottom: 30px; color: #fff; font-size: 24px; }
+.subtitle { margin-bottom: 30px; color: #fff; font-size: 35px;text-transform: uppercase;
+    letter-spacing: 3px; }
 .accordion-3d { max-width: 800px; margin: 0 auto; text-align: left; }
 
 .accordion-item-3d {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(86, 85, 85, 0.282);
     margin-bottom: 15px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(178, 173, 173, 0.504);
     transition: all 0.5s ease;
     transform-style: preserve-3d;
 }
@@ -948,11 +953,11 @@ start Our Projects
 
 /* Projects Section Styling */
 .projects-section {
-    padding: 60px 20px;
-    background-color: #0a0e17; /* Dark Background */
+    padding: 20px 20px 20px 20px;
+    background-color: #0a0e17;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    perspective: 1000px; /* Essential for 3D effect */
+    perspective: 1000px;
 }
 
 .section-title {
